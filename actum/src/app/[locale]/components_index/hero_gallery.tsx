@@ -15,7 +15,7 @@ export default function HeroGallery({ images }: Props) {
           key={url}
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeInOut", delay: index * 0.15 }}
+          transition={{ duration: 1, ease: "easeInOut", delay: index * 0.15 }}
           className={`relative aspect-3/4 overflow-hidden ${index >= 2 ? "hidden md:block" : ""}`}
         >
           <Image src={url} alt="" fill className="object-cover" />

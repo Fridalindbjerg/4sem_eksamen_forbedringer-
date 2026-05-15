@@ -7,7 +7,7 @@ type Dot = { id: number; x: number; y: number };
 
 const DOT_COUNT = 68;
 const INTERVAL = 400;
-const INTRO_DELAY = 2;
+const INTRO_DELAY = 1.2;
 const INTRO_END = (INTRO_DELAY + DOT_COUNT * 0.04 + 0.5) * 1000;
 
 function generateDots(): Dot[] {
