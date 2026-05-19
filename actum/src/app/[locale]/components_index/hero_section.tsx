@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import HeroGallery from "./hero_gallery";
 import HeroDots from "./hero_dots";
 import HeroText from "./hero_text";
 import { getIndexImages } from "@/lib/index_gallery";
 
 export default async function Hero() {
-  const t = useTranslations("hero"); // Sprogvalg 
+  const t = await getTranslations("hero"); // Sprogvalg med getTranslations, da useTranslations ikke kan bruges på async komponenter
   const images = await getIndexImages(); // Henter billeder til galleriet
 
   return (
