@@ -47,24 +47,42 @@ export default function CasesNav({ cases }: Props) {
   }, [cases]);
 
   return (
-    <nav
-      className="hidden md:block sticky self-start top-1/2 -translate-y-1/2 md:top-30 md:translate-y-0"
-      style={{ gridRow: `span ${cases.length}` }}
-    >
-      {cases.map((caseItem) => (
-        <a
-          key={caseItem.id}
-          // Sender brugeren til det tilsvarende case-element på siden
-          href={`#case-${caseItem.order}`}
-          // Aktiv case er fuldt synlig, inaktive cases er nedtonede til 40% opacity
-          className={`block py-3 md:py-0 ${activeId === caseItem.order ? "opacity-100" : "opacity-40"}`}
-        >
-          {/* Konverterer orden til string og sikrer altid to cifre */}
-          <p>
-            {caseItem.title} - {String(caseItem.order).padStart(2, "0")}
-          </p>
-        </a>
-      ))}
-    </nav>
+    // <nav className="hidden md:block sticky self-start top-1/2 -translate-y-1/2 md:top-30 md:translate-y-0" style={{ gridRow: `span ${cases.length}` }}>
+    //   {cases.map((caseItem) => (
+    //     <a
+    //       key={caseItem.id}
+    //       // Sender brugeren til det tilsvarende case-element på siden
+    //       href={`#case-${caseItem.order}`}
+    //       // Aktiv case er fuldt synlig, inaktive cases er nedtonede til 40% opacity
+    //       className={`block py-3 md:py-0 ${activeId === caseItem.order ? "opacity-100" : "opacity-40"}`}
+    //     >
+    //       {/* Konverterer orden til string og sikrer altid to cifre */}
+    //       {/* <p>
+    //         {caseItem.title} - {String(caseItem.order).padStart(2, "0")}
+    //       </p> */}
+    //       <p>
+    //         <span className="mr-2">{String(caseItem.order).padStart(2, "0")}</span>
+    //         {caseItem.title}
+    //       </p>
+    //     </a>
+    //   ))}
+    // </nav>
+<section className="col-[content-start/content-end] md:col-[content-start/2] md:sticky md:top-30 md:self-start">
+      <nav className="hidden md:block">
+        <ul className="grid gap-3">
+          {cases.map((caseItem) => (
+            <li key={caseItem.id}>
+              <a href={`#case-${caseItem.order}`} className={activeId === caseItem.order ? "opacity-100" : "opacity-40"}>
+                <span className="grid grid-cols-[auto_1fr] gap-2">
+                  <span>{String(caseItem.order).padStart(2, "0")}</span>
+                  <span>{caseItem.title}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </section>
   );
 }
+

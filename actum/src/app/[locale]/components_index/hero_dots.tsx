@@ -10,9 +10,7 @@ type Dot = { id: number; x: number; y: number };
 const DOT_COUNT = 68;
 // Interval i 400 ms mellem hver tilfældig blink-animation
 const INTERVAL = 400;
-// Forsinkelse i 2 sekunder før intro-animationen starter
-const INTRO_DELAY = 2;
-// Tidspunkt i ms hvor intro-animationen er færdig og blink-fasen begynder
+const INTRO_DELAY = 1.2;
 const INTRO_END = (INTRO_DELAY + DOT_COUNT * 0.04 + 0.5) * 1000;
 
 // Genererer tilfældige prikker fordelt i et cirkulært mønster
