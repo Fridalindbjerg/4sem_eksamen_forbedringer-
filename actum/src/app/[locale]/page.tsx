@@ -1,24 +1,23 @@
-import { getPopularProducts } from "@/lib/products";
-import ProductGrid from "./(routes)/global_components/product_grid";
+import { Suspense } from "react";
+import IndexContent from "./components_index/index_content";
 import Hero from "./components_index/hero_section";
 import AboutSection from "./components_index/about_section";
 import VideoSection from "./components_index/video_section";
 import FaqSectionWrapper from "./components_index/faq_section_wrapper";
 
-export default async function Home() {
-  const popularProducts = await getPopularProducts();
-
+export default function Home() {
   return (
+    // suspense omkring produkter og Faq, da de begge henter data asynkront. Resten af siden er statisk og loades derfor med det samme. 
     <main className="full-bleed grid grid-cols-subgrid">
       <Hero />
-      <ProductGrid
-        products={popularProducts ?? []}
-        title="Populære produkter"
-      />
-
+      <Suspense fallback={<p>Loading Products...</p>}>
+        <IndexContent />
+      </Suspense>
       <VideoSection />
       <AboutSection />
-      <FaqSectionWrapper />
+      <Suspense fallback={<p>Loading FAQ's...</p>}>
+        <FaqSectionWrapper />
+      </Suspense>
     </main>
   );
 }

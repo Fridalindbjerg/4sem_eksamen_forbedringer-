@@ -13,12 +13,13 @@
   --page-margin: 1.565rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* udkommenteret for at fjerne darkmode  */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #191919;
     --foreground: #ffffff;
   }
-}
+} */
 
 @theme {
   --font-ocr: "ocr-b", monospace;
@@ -59,6 +60,12 @@
 
 @utility no-scrollbar {
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+* {
+  cursor:
+    url("/assets/index/book-cursor.png") 24 24,
+    auto;
 }
 
 body {

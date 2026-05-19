@@ -8,5 +8,6 @@
     "address": "Vesterbrogade 129,",
     "city": "1629 København",
     "link": "om os"
-  }
+  },
+  "faq_section": { "h2": "har du spørgsmål?", "link_faq": "flere FAQs" }
 }

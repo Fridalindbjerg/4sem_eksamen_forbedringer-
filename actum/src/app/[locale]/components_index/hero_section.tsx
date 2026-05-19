@@ -5,8 +5,8 @@ import HeroText from "./hero_text";
 import { getIndexImages } from "@/lib/index_gallery";
 
 export default async function Hero() {
-  const t = useTranslations("hero");
-  const images = await getIndexImages();
+  const t = useTranslations("hero"); // Sprogvalg 
+  const images = await getIndexImages(); // Henter billeder til galleriet
 
   return (
     <section className="full-bleed grid grid-cols-subgrid grid-rows-[auto_auto_auto_auto_auto]">

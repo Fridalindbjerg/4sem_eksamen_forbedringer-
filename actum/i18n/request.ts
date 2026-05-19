@@ -1,43 +1,19 @@
-// import { getRequestConfig } from "next-intl/server";
-// import { hasLocale } from "next-intl";
-// import { routing } from "./routing";
-
-// export default getRequestConfig(async ({ requestLocale }) => {
-//   // Henter det "locale" som bruger har bedt/klikket på via URL'en ("da" / "en")
-//   const requested = await requestLocale;
-
-//   const locale = hasLocale(routing.locales, requested)
-//     ? // tjekker om det ønskede locale findes
-//       // Hvis ja: brug det - Hvis nej: brug defaultLocale som i vores tilfælde er dansk(da)
-//       requested
-//     : routing.defaultLocale;
-
-//   // her henter vi oversættelsesfilen/json for alle vores sider på det valgte sprog
-// const index = (await import(`../messages/${locale}/index.json`)).default;
-
-// // global json dækker over header, footer, navigation osv. - altså de ting der er "globalt" på hele sitet og ikke kun på en enkelt side
-// const global = (await import(`../messages/${locale}/global.json`)).default;
-//   // tilføj alle json filer her som const og bagefter tilføj i messages objektet - altid med ... xyz, så det bliver samlet i et objekt
-
-//   return {
-//     // Fortæller next-intl hvilket sprog der er "aktivt"
-//     locale,
-//     messages: {
-//       ...index,
-//       ...global,
-//     },
-//   };
-// });
-
-// i18n/request.ts
 import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
+// Konfigurerer next-intl til at hente de rigtige oversættelser for hver anmodning.
+// getRequestConfig kører på serveren hver gang en bruger besøger en side.
 export default getRequestConfig(async ({ requestLocale }) => {
+  // Henter det aktuelle sprog fra anmodningen.
+  // Hvis intet sprog findes falder den tilbage på standardsproget defineret i routing.ts
   const locale = (await requestLocale) || routing.defaultLocale;
 
   return {
     locale,
+    // Samler alle oversættelsesfiler for det aktuelle sprog til ét objekt.
+    // ... spreder indholdet af hver fil ud så de alle ligger på samme niveau.
+    // På den måde kan vi bruge t("contact.title") og t("products.title") fra samme sted
+    // i stedet for at importere hver fil individuelt i hver komponent.
     messages: {
       ...(await import(`../messages/${locale}/index.json`)).default,
       ...(await import(`../messages/${locale}/global.json`)).default,

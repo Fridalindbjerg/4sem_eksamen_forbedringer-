@@ -8,5 +8,6 @@
     "address": "Vesterbrogade 129,",
     "city": "1629 Copenhagen",
     "link": "about us"
-  }
+  },
+  "faq_section": { "h2": "frequently asked questions", "link_faq": "more FAQs" }
 }

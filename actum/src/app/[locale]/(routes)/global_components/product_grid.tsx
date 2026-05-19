@@ -1,23 +1,27 @@
-import { Link } from "@i18n/navigation";
-import Image from "next/image";
 import { Product } from "@/lib/types";
-import { getAspectRatio } from "@/lib/utils";
 import { getLocale } from "next-intl/server";
+import { Link } from "@i18n/navigation";
+import ProductImage from "./product_image";
 
 export default async function ProductGrid({
   products,
   title,
 }: {
+  // Modtager en liste af produkter og en titel som props
   products: Product[];
   title: string;
 }) {
+  // Henter det aktuelle sprog så produktnavne vises på det rigtige sprog
   const locale = (await getLocale()) as "da" | "en";
 
+  // Hvis der ingen produkter er, vises ingenting
   if (products.length === 0) return null;
 
   return (
     <section className="content">
       <h2>{title}</h2>
+
+      {/* Horisontal scrollbar der snapper til hvert produkt */}
       <ul
         className="flex overflow-x-auto gap-4 no-scrollbar"
         style={{
@@ -25,28 +29,17 @@ export default async function ProductGrid({
           WebkitOverflowScrolling: "touch",
         }}
       >
+        {/* Looper igennem alle produkter og viser dem som et klikbart kort */}
         {products.map((product) => (
           <Link href={`/products/${product.id}`} key={product.id}>
             <li
+              // shrink-0 sikrer at produkterne ikke krymper når der er mange i rækken
               className="flex flex-col gap-2 shrink-0 w-70"
               style={{ scrollSnapAlign: "start" }}
             >
               <div>[ {product.sort_by} ]</div>
               <p>{product.name[locale]}</p>
-              {product.pics?.[0] && product.pics[0] !== "null" ? (
-                <div
-                  className={`relative w-full ${getAspectRatio(product.id)} overflow-hidden`}
-                >
-                  <Image
-                    src={product.pics[0]}
-                    alt={product.name[locale]}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ) : product.editorial_text ? (
-                <p>{product.editorial_text}</p>
-              ) : null}
+              <ProductImage product={product} locale={locale} />
             </li>
           </Link>
         ))}

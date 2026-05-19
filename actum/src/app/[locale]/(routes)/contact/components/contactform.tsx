@@ -6,9 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { submitContactForm } from "@/lib/submissions";
 
-// Props receives translations as strings from page.tsx
-// as t() from next-intl does not work in client components
-// Error messages are also passed as props so zod can display them in the correct language
+// Props modtager oversættelser som tekststrenge fra page.tsx
+// fordi t() fra next-intl ikke virker i klientkomponenter
+// Fejlbeskeder sendes også som props, så zod kan vise dem på det rigtige sprog
 type Props = {
   submitLabel: string;
   emailLabel: string;
@@ -23,6 +23,7 @@ type Props = {
   errorLabel: string;
 };
 
+// Modtager alle oversættelser som props, da t() ikke virker i klientkomponenter. 
 export default function ContactForm({
   submitLabel,
   emailLabel,
@@ -36,11 +37,11 @@ export default function ContactForm({
   sentLabel,
   errorLabel,
 }: Props) {
-  // Controls the submit button text depending on form state
+  // Styrer tekst på send-knappen afhængigt af formularens tilstand
   const [buttonText, setButtonText] = useState(submitLabel);
 
-  // Zod schema defines validation rules for each field
-  // Error messages come as props from page.tsx so they can be translated
+  // Zod-schema definerer valideringsregler for hvert felt
+  // Fejlbeskeder kommer som props fra page.tsx, så de kan oversættes
   const contactSchema = z.object({
     email: z.string().email(errorEmail),
     name: z.string().min(2, errorName),
@@ -48,10 +49,10 @@ export default function ContactForm({
     message: z.string(),
   });
 
-  // TypeScript type is inferred automatically from the zod schema
+  // TypeScript-typen bestemmes automatisk ud fra zod-schemaet
   type FormData = z.infer<typeof contactSchema>;
 
-  // reset is used to clear the form after successful submission
+  // reset bruges til at rydde formularen efter en vellykket afsendelse
   const {
     register,
     handleSubmit,
@@ -61,16 +62,16 @@ export default function ContactForm({
     resolver: zodResolver(contactSchema),
   });
 
-  // Called when the form is submitted and validation passes
+  // Kaldes når formularen sendes, og valideringen er gået igennem
   const onSubmit = async (data: FormData) => {
     setButtonText(sendingLabel);
 
     try {
       await submitContactForm(data);
-      // Resets the form and shows success message in the button
+      // Nulstiller formularen og viser succesbesked på knappen
       setButtonText(sentLabel);
       reset();
-      // Resets button text back to original after 3 seconds
+      // Gendanner knappens tekst til originalen efter 3 sekunder
       setTimeout(() => {
         setButtonText(submitLabel);
       }, 3000);

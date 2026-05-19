@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 
+// props til at animere 
 type Props = {
-  children: React.ReactNode;
-  delay: number;
+  children: React.ReactNode; // det indhold der skal animeres
+  delay: number; // forsinkelse før animationen starter
   className?: string;
 };
 

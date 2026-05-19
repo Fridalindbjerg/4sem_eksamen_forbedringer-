@@ -3,13 +3,13 @@ import { getTranslations } from "next-intl/server";
 import ContactForm from "./components/contactform";
 
 export default async function ContactPage() {
-  // Fetches translations from the contact key in da.json / en.json
+  // Henter oversættelser fra kontakt-nøglen i da.json / en.json
   const t = await getTranslations("contact");
 
   return (
     <main className="full-bleed grid grid-cols-subgrid">
       <section className="content grid grid-cols-1 md:grid-cols-2">
-        {/* Image in left column */}
+        {/* Billede i venstre kolonne */}
         <div className="relative h-40 md:h-full">
           <Image
             src="/assets/contact/contact_image.png"
@@ -20,15 +20,13 @@ export default async function ContactPage() {
             className="object-cover w-auto h-auto"
           />
         </div>
-        {/* Form in right column */}
+        {/* Formular i højre kolonne */}
         <div>
           <h1 className="mt-0">{t("title")}</h1>
-          {/* 
-                        ContactForm is a client component and cannot use t() itself.
-                        Translations are therefore passed down as props from this server component.
-                        Zod validation error messages are also passed as props so they can be translated.
-                    */}
           <p className="indent-36 mt-8 mb-8">{t("description")}</p>
+          {/* ContactForm er en klientkomponent og kan ikke bruge t() selv.
+              Oversættelser sendes derfor som props fra denne serverkomponent.
+              Zod-valideringsfejlmeddelelser sendes også som props, så de kan oversættes.*/}
           <ContactForm
             submitLabel={t("submit")}
             emailLabel={t("email")}
