@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function VideoSection() {
   return (
 
-    <section className="full-bleed grid grid-cols-subgrid grid-rows-[1fr_auto] overflow-hidden max-h-[50vh]">
+    <section className=" full-bleed grid grid-cols-subgrid grid-rows-[1fr_auto] overflow-hidden max-h-[50vh]">
       <video
         src="/assets/index/dummy-video.mp4"
         autoPlay

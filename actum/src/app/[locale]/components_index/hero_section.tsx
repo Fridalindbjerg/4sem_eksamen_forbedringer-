@@ -9,7 +9,7 @@ export default async function Hero() {
   const images = await getIndexImages(); // Henter billeder til galleriet
 
   return (
-    <section className="full-bleed grid grid-cols-subgrid grid-rows-[auto_auto_auto_auto_auto]">
+    <section className="pb-28 full-bleed grid grid-cols-subgrid grid-rows-[auto_auto_auto_auto_auto]">
       <HeroGallery images={images} />
 
       <HeroText delay={1} className="content row-[2/4] self-end z-10">
@@ -20,7 +20,7 @@ export default async function Hero() {
         <h2 className="font-sans! text-[clamp(2.5rem,5vw,4.6875rem)]! leading-none">{t("title")}</h2>
       </HeroText>
 
-      <HeroText delay={1.6} className="col-[content-start/content-end] md:col-[content-start/5] row-[5/6] py-8">
+      <HeroText delay={1.6} className="col-[content-start/content-end] md:col-[content-start/5] row-[5/6] pt-8">
         <p className="text-base indent-20">{t("text")}</p>
       </HeroText>
 

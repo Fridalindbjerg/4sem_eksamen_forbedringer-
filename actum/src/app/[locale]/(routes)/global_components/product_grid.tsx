@@ -18,12 +18,12 @@ export default async function ProductGrid({
   if (products.length === 0) return null;
 
   return (
-    <section className="content">
+    <section className="section content">
       <h2>{title}</h2>
 
       {/* Horisontal scrollbar der snapper til hvert produkt */}
       <ul
-        className="flex overflow-x-auto gap-4 no-scrollbar"
+        className="flex overflow-x-auto gap-8 pt-8"
         style={{
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",
@@ -34,7 +34,7 @@ export default async function ProductGrid({
           <Link href={`/products/${product.id}`} key={product.id}>
             <li
               // shrink-0 sikrer at produkterne ikke krymper når der er mange i rækken
-              className="flex flex-col gap-2 shrink-0 w-70"
+              className="flex flex-col gap-4 shrink-0 w-70"
               style={{ scrollSnapAlign: "start" }}
             >
               <div>[ {product.sort_by} ]</div>

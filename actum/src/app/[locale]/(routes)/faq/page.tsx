@@ -1,7 +1,5 @@
 import { Suspense } from "react";
 import FaqContent from "./components/faq_content";
-import { getFaqs } from "@/lib/faq";
-import { getFaqImages } from "@/lib/gallery";
 import GlobalH1Section from "../global_components/global-h1-section";
 import { getTranslations } from "next-intl/server";
 

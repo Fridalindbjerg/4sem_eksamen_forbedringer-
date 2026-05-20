@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useLocale } from "next-intl";
 import { Case } from "@/lib/types";
 
 // Props for CaseItem komponenten — modtager et caseItem af typen Case
@@ -12,6 +13,10 @@ type Props = {
 
 export default function CaseItem({ caseItem }: Props) {
   const ref = useRef(null);
+
+  // useLocale returnerer den aktive locale ('da' eller 'en') fra next-intl
+  // Bruges i client components — server components bruger getLocale() fra next-intl/server
+  const locale = useLocale() as "da" | "en";
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -31,8 +36,7 @@ export default function CaseItem({ caseItem }: Props) {
   const y = useTransform(scrollYProgress, [0.6, 1], [20, 0]);
 
   return (
-    <article className="col-[content-start/content-end] md:col-[2/7] grid grid-cols-subgrid ">
-      {" "}
+    <article className="col-[content-start/content-end] md:col-[2/7] grid grid-cols-subgrid">
       <motion.div
         id={`case-${caseItem.order}`}
         ref={ref}
@@ -42,7 +46,8 @@ export default function CaseItem({ caseItem }: Props) {
         {caseItem.image_url && (
           <Image
             src={caseItem.image_url.trim()}
-            alt={caseItem.title}
+            // Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale
+            alt={caseItem.title[locale]}
             width={800}
             height={900}
             className="w-full h-auto max-h-[80vh] object-cover"
@@ -50,8 +55,10 @@ export default function CaseItem({ caseItem }: Props) {
         )}
       </motion.div>
       <div className="col-[content-start/content-end] md:col-[4/6] self-center md:pl-6">
-        <p>{caseItem.title}</p>
-        <motion.p style={{ opacity, y }}>{caseItem.description}</motion.p>
+        {/* Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale */}
+        <p>{caseItem.title[locale]}</p>
+        {/* Henter den lokaliserede beskrivelse fra jsonb-objektet baseret på aktiv locale */}
+        <motion.p style={{ opacity, y }}>{caseItem.description[locale]}</motion.p>
       </div>
     </article>
   );

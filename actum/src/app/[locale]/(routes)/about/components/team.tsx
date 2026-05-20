@@ -15,7 +15,7 @@ function MemberText({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-ocr text-[--grey]">{name}</span>
+      <span className="font-ocr text-[--grey] pt-4">{name}</span>
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
@@ -55,7 +55,7 @@ export default async function TeamSection() {
 
   return (
     // Grid der viser 2 kolonner på mobil og fylder automatisk ud fra 270px på større skærme
-    <section className="content grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-8">
+    <section className="section content grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-8">
       {/* looper igennem alle teammedlemmer og viser deres billede og tekst */}
       {members.map((member) => (
         <article key={member.id} className="flex flex-col">

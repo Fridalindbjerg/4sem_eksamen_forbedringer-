@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "design og tryk",
-    "text": "Du har en opgave, der skal løses. Vi tager den ind, sætter filerne op og leverer til tiden. Uanset om det er visitkort, menukort eller bannere til næste event."
+    "text": "Du har en opgave, der skal løses. Vi tager den ind, sætter filerne op og leverer til tiden. Uanset om det er visitkort, menukort eller bannere til næste event. Du har en opgave, der skal løses. Vi tager den ind, sætter filerne op og leverer til tiden. Uanset om det er visitkort, menukort eller bannere til næste event. u har en opgave, der skal løses. Vi tager den ind, sætter filerne op og leverer til tiden. Uanset om det er visitkort, menukort eller bannere til næste event. "
   },
   "about_section": {
     "text": "Vi arbejder med de fleste formater og materialer, og vi tjekker dine filer inden vi trykker. Har du ikke en færdig fil, hjælper vi dig med opsætningen. Du godkender altid prisen inden vi går i gang.",
@@ -9,5 +9,8 @@
     "city": "1629 København",
     "link": "om os"
   },
-  "faq_section": { "h2": "har du spørgsmål?", "link_faq": "flere FAQs" }
+  "faq_section": {
+    "h2": "har du spørgsmål?",
+    "link_faq": "flere FAQs"
+  }
 }

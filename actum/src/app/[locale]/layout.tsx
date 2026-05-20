@@ -10,6 +10,9 @@ import Header from "./(routes)/global_components/header";
 export const metadata: Metadata = {
   title: "Actum Design og Tryk",
   description: "Actum Design og Tryk",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 // Indlæser Public Sans fra Google Fonts og sætter den som en CSS-variabel.

@@ -14,7 +14,6 @@ type Props = {
   emailLabel: string;
   nameLabel: string;
   phoneLabel: string;
-  messageLabel: string;
   messagePlaceholder: string;
   errorEmail: string;
   errorName: string;
@@ -30,7 +29,6 @@ export default function ContactForm({
   emailLabel,
   nameLabel,
   phoneLabel,
-  messageLabel,
   messagePlaceholder,
   errorEmail,
   errorName,
@@ -88,7 +86,7 @@ export default function ContactForm({
         <input
           type="email"
           placeholder={emailLabel}
-          className="w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
+          className="cursor-pointer w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
           {...register("email")}
         />
         {errors.email && (
@@ -101,7 +99,7 @@ export default function ContactForm({
           <input
             type="text"
             placeholder={nameLabel}
-            className="w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
+            className="cursor-pointer w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
             {...register("name")}
           />
           {errors.name && (
@@ -112,7 +110,7 @@ export default function ContactForm({
           <input
             type="tel"
             placeholder={phoneLabel}
-            className="w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
+            className="cursor-pointer w-full border-b border-(--almost-black) bg-transparent outline-none pb-4"
             {...register("phone")}
           />
           {errors.phone && (
@@ -122,12 +120,9 @@ export default function ContactForm({
       </div>
 
       <div>
-        <label className="text-(--grey) font-sans text-base">
-          {messageLabel}
-        </label>
         <textarea
           placeholder={messagePlaceholder}
-          className="w-full border-b border-(--almost-black) bg-transparent outline-none resize-none h-32 pb-2"
+          className="cursor-pointer w-full border-b border-(--almost-black) bg-transparent outline-none resize-none h-32 pb-2"
           {...register("message")}
         />
       </div>

@@ -45,8 +45,15 @@ export type Material = {
 // Case beskriver strukturen på en case der vises i case-sektionen.
 export type Case = {
   id: number;
-  title: string;
-  description: string;
+  title: {
+    da: string;
+    en: string;
+  };
+  description: {
+    da: string;
+    en: string;
+  };
+
   image_url: string;
   // Bruges til at styre om billedet vises i stående eller liggende format
   orientation: string;
@@ -80,3 +87,4 @@ export type ContactFormData = {
   phone: string;
   message: string;
 };
+
