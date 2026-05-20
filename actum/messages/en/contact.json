@@ -6,6 +6,7 @@
     "phone": "phone",
     "message": "message",
     "submit": "submit",
+    "messagePlaceholder": "Describe your project - what needs to be printed, in what quantity, and when should it be ready? Do you have a file ready, or do you need help with setup? The more you tell us, the better we can help.",
     "errors": {
       "email": "Invalid email",
       "name": "Name must be at least 2 characters",

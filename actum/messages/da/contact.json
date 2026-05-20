@@ -6,6 +6,7 @@
     "phone": "telefon",
     "message": "besked",
     "submit": "send",
+    "messagePlaceholder": "Beskriv dit projekt - hvad skal trykkes, i hvilken mængde, og hvornår skal det være klar? Har du en fil klar, eller har du brug for hjælp til opsætning? Jo mere du fortæller, desto bedre kan vi hjælpe.",
     "errors": {
       "email": "Ugyldig email",
       "name": "Navn skal være mindst 2 tegn",
