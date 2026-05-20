@@ -9,7 +9,7 @@ export default async function FaqContent() {
   const [faqs, images] = await Promise.all([getFaqs(), getFaqImages()]);
 
   return (
-    <section className="content grid grid-cols-subgrid">
+    <section className="section content grid grid-cols-subgrid gap-4">
       <FaqPageSection faqs={faqs} />
       <FaqGallery images={images} />
     </section>

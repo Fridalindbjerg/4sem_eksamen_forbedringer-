@@ -18,6 +18,7 @@ export default async function SingleProductPage({
 }) {
   const t = await getTranslations("singleproduct");
   const locale = (await getLocale()) as "da" | "en";
+  // const locale = await getLocale();
 
   // Udpakker id fra params – vi bruger await fordi params er et Promise
   const { id } = await params;
@@ -39,7 +40,7 @@ export default async function SingleProductPage({
 
   return (
     <main className="full-bleed grid grid-cols-subgrid">
-      <section className="content grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
+      <section className="section content grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
         <div>
           <p className="font-ocr text-xs text-grey mb-2">
             <Link

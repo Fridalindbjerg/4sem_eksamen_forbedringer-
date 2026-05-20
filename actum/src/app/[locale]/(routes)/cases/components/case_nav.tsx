@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 import { Case } from "@/lib/types";
 
 // Komponenten modtager en liste af cases fra CasesPage
@@ -12,6 +13,10 @@ export default function CasesNav({ cases }: Props) {
   // activeId holder orden-nummeret på den case der er synlig i viewport
   // Starter som null fordi ingen case er aktiv når siden loader
   const [activeId, setActiveId] = useState<number | null>(null);
+
+  // useLocale returnerer den aktive locale ('da' eller 'en') fra next-intl
+  // Bruges i client components — server components bruger getLocale() fra next-intl/server
+  const locale = useLocale() as "da" | "en";
 
   useEffect(() => {
     // Looper gennem alle cases og opretter en IntersectionObserver pr. case
@@ -47,27 +52,27 @@ export default function CasesNav({ cases }: Props) {
   }, [cases]);
 
   return (
-    <div className="col-[content-start/content-end] md:col-start-1 md:col-end-2 md:row-start-1 md:sticky md:top-30 md:self-start">
-      {" "}
+    <div className="col-[content-start/content-end] md:col-start-1 md:col-end-2 md:row-start-1 md:sticky md:top-36 md:self-start">
       <nav className="hidden md:block">
         <ul className="grid gap-3">
           {cases.map((caseItem) => (
             <li key={caseItem.id}>
-              <a
-                href={`#case-${caseItem.order}`}
+
+              <a href={`#case-${caseItem.order}`}
                 className={
                   activeId === caseItem.order ? "opacity-100" : "opacity-40"
                 }
               >
                 <span className="grid grid-cols-[auto_1fr] gap-2">
                   <span>{String(caseItem.order).padStart(2, "0")}</span>
-                  <span>{caseItem.title}</span>
+                  {/* Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale */}
+                  <span>{caseItem.title[locale]}</span>
                 </span>
               </a>
             </li>
           ))}
         </ul>
       </nav>
-    </div>
+    </div >
   );
 }
