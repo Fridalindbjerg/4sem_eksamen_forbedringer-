@@ -15,6 +15,7 @@ type Props = {
   nameLabel: string;
   phoneLabel: string;
   messageLabel: string;
+  messagePlaceholder: string;
   errorEmail: string;
   errorName: string;
   errorPhone: string;
@@ -30,6 +31,7 @@ export default function ContactForm({
   nameLabel,
   phoneLabel,
   messageLabel,
+  messagePlaceholder,
   errorEmail,
   errorName,
   errorPhone,
@@ -120,8 +122,11 @@ export default function ContactForm({
       </div>
 
       <div>
+        <label className="text-(--grey) font-sans text-base">
+          {messageLabel}
+        </label>
         <textarea
-          placeholder={messageLabel}
+          placeholder={messagePlaceholder}
           className="w-full border-b border-(--almost-black) bg-transparent outline-none resize-none h-32 pb-2"
           {...register("message")}
         />

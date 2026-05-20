@@ -33,6 +33,7 @@ export default async function ContactPage() {
             nameLabel={t("name")}
             phoneLabel={t("phone")}
             messageLabel={t("message")}
+            messagePlaceholder={t("messagePlaceholder")}
             errorEmail={t("errors.email")}
             errorName={t("errors.name")}
             errorPhone={t("errors.phone")}
