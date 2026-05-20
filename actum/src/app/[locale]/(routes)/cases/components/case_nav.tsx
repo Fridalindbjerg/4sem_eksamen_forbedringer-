@@ -47,7 +47,7 @@ export default function CasesNav({ cases }: Props) {
   }, [cases]);
 
   return (
-    <section className="col-[content-start/content-end] md:col-start-1 md:col-end-2 md:row-start-1 md:sticky md:top-30 md:self-start">
+    <div className="col-[content-start/content-end] md:col-start-1 md:col-end-2 md:row-start-1 md:sticky md:top-30 md:self-start">
       {" "}
       <nav className="hidden md:block">
         <ul className="grid gap-3">
@@ -68,6 +68,6 @@ export default function CasesNav({ cases }: Props) {
           ))}
         </ul>
       </nav>
-    </section>
+    </div>
   );
 }
