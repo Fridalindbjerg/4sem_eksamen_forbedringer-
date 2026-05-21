@@ -7,8 +7,8 @@ export default async function ContactPage() {
   const t = await getTranslations("contact");
 
   return (
-    <main className="full-bleed grid grid-cols-subgrid">
-      <section className="section content grid grid-cols-1 md:grid-cols-2">
+    <main className="full-bleed grid grid-cols-subgrid ">
+      <section className="section gap-20 content grid grid-cols-1 md:grid-cols-2 md:pt-4">
         {/* Billede i venstre kolonne */}
         <div className="relative h-40 md:h-full">
           <Image
@@ -21,7 +21,7 @@ export default async function ContactPage() {
           />
         </div>
         {/* Formular i højre kolonne */}
-        <div className="md:pl-8 pt-0">
+        <div className="pt-0">
           <h1>{t("title")}</h1>
           <p className="indent-25 md:py-8">{t("description")}</p>
           {/* ContactForm er en klientkomponent og kan ikke bruge t() selv.

@@ -40,7 +40,7 @@ export default async function SingleProductPage({
 
   return (
     <main className="full-bleed grid grid-cols-subgrid">
-      <section className="section content grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
+      <section className="section content grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 md:pt-4">
         <div>
           <p className="font-ocr text-xs text-grey mb-2">
             <Link
