@@ -57,8 +57,8 @@ export default function CasesNav({ cases }: Props) {
         <ul className="grid gap-3">
           {cases.map((caseItem) => (
             <li key={caseItem.id}>
-
-              <a href={`#case-${caseItem.order}`}
+              <a
+                href={`#case-${caseItem.order}`}
                 className={
                   activeId === caseItem.order ? "opacity-100" : "opacity-40"
                 }
@@ -66,13 +66,13 @@ export default function CasesNav({ cases }: Props) {
                 <span className="grid grid-cols-[auto_1fr] gap-2">
                   <span>{String(caseItem.order).padStart(2, "0")}</span>
                   {/* Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale */}
-                  <span>{caseItem.title[locale]}</span>
+                  <p>{caseItem.title[locale]}</p>
                 </span>
               </a>
             </li>
           ))}
         </ul>
       </nav>
-    </div >
+    </div>
   );
 }
