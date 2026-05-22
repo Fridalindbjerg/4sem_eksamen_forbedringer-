@@ -37,27 +37,25 @@ export default function ProductFilter({ products, locale }: Props) {
   return (
     <div>
       {/* Navigation med filterknapper – én knap per kategori plus en knap til at vise alle */}
-      <nav className="flex justify-between items-center w-full">
+      <nav className="flex flex-col items-start sm:flex-row sm:justify-between sm:items-center w-full md:gap-6">
         {/* Knap der nulstiller filteret og viser alle produkter.
         Den aktive knap vises i fuld farve – inaktive knapper vises i grå */}
         <button
           onClick={() => setActiveCategory(null)}
-          className={`font-ocr ${activeCategory === null ? "" : "text-(--grey)"}`}
+          className={`font-sans pb-2 ${activeCategory === null ? "" : "text-(--grey)"}`}
         >
           alle produkter
         </button>
-
         {/* Looper igennem alle unikke kategorier og laver en filterknap per kategori.
         Klikker man på en knap sættes activeCategory til den valgte kategori */}
         {categories.map((cat, index) => (
-          <span key={cat} className="flex items-center gap-3">
-            <button
-              onClick={() => setActiveCategory(cat)}
-              className={`font-ocr ${activeCategory === cat ? "" : "text-(--grey)"}`}
-            >
-              {cat}
-            </button>
-          </span>
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`font-sans lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey)"}`}
+          >
+            {cat}
+          </button>
         ))}
       </nav>
 
