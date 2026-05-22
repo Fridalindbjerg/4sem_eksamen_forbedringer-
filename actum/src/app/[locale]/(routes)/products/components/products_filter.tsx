@@ -29,7 +29,7 @@ export default function ProductFilter({ products, locale }: Props) {
   // Hvis ingen kategori er valgt vises alle produkter – ellers kun dem der matcher den valgte kategori.
   const filtered =
     activeCategory === null
-      ? products.filter((product) => product.category !== null)
+      ? products
       : products.filter(
           (product) => product.category?.[locale] === activeCategory,
         );
