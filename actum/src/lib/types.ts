@@ -19,8 +19,10 @@ export type Product = {
   // Et produkt kan have flere billeder – eller ingen, deraf null
   pics: string[] | null;
   // Redaktionel tekst der vises i stedet for et billede hvis produktet ikke har nogen billeder
-  editorial_text: string | null;
-  // Bruges til at fremhæve populære produkter på forsiden
+  editorial_text: {
+    da: string;
+    en: string;
+  } | null; // Bruges til at fremhæve populære produkter på forsiden
   is_popular: boolean;
   // Tidspunkt for hvornår produktet blev oprettet i databasen
   created_at: string;
@@ -87,4 +89,3 @@ export type ContactFormData = {
   phone: string;
   message: string;
 };
-

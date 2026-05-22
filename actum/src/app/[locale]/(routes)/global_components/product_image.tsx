@@ -25,7 +25,9 @@ export default function ProductImage({
 
   // Hvis der ingen billeder er, vises editorial_text i stedet – eller ingenting
   if (!imageSrc || imageSrc === "null") {
-    return product.editorial_text ? <p>{product.editorial_text}</p> : null;
+    return product.editorial_text ? (
+      <p>{product.editorial_text[locale]}</p>
+    ) : null;
   }
 
   return (

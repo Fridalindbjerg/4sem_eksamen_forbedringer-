@@ -42,7 +42,7 @@ export default function ProductFilter({ products, locale }: Props) {
         Den aktive knap vises i fuld farve – inaktive knapper vises i grå */}
         <button
           onClick={() => setActiveCategory(null)}
-          className={`font-sans pb-2 ${activeCategory === null ? "" : "text-(--grey)"}`}
+          className={`font-sans filter-button  pb-2 ${activeCategory === null ? "" : "text-(--grey)"}`}
         >
           alle produkter
         </button>
@@ -52,7 +52,7 @@ export default function ProductFilter({ products, locale }: Props) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`font-sans lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey)"}`}
+            className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey)"}`}
           >
             {cat}
           </button>
