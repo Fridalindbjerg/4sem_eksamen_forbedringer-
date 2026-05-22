@@ -49,7 +49,8 @@
     font-size: var(--font-size-h2);
   }
 
-  h3 {
+  h3,
+  button {
     font-size: var(--font-size-h3);
   }
 
@@ -97,14 +98,17 @@ body {
 
   display: grid;
   grid-template-columns:
-    [full-start] var(--page-margin) [content-start] repeat(2, minmax(0, 1fr)) [content-end] var(--page-margin) [full-end];
+    [full-start] var(--page-margin) [content-start] repeat(2, minmax(0, 1fr))
+    [content-end] var(--page-margin) [full-end];
   grid-template-rows: auto;
 }
 
 @media (min-width: 768px) {
   body {
     grid-template-columns:
-      [full-start] var(--page-margin) [content-start] repeat(5, minmax(0, 1fr)) [content-end] var(--page-margin) [full-end];
+      [full-start] var(--page-margin)
+      [content-start] repeat(5, minmax(0, 1fr)) [content-end] var(--page-margin)
+      [full-end];
     grid-template-rows: auto;
   }
 }
@@ -112,7 +116,9 @@ body {
 @media (min-width: 1024px) {
   body {
     grid-template-columns:
-      [full-start] var(--page-margin) [content-start] repeat(5, minmax(0, 1fr)) [content-end] var(--page-margin) [full-end];
+      [full-start] var(--page-margin)
+      [content-start] repeat(5, minmax(0, 1fr)) [content-end] var(--page-margin)
+      [full-end];
     grid-template-rows: auto;
   }
 }
@@ -129,7 +135,8 @@ main,
 h1,
 h2,
 h3,
-h4 {
+h4,
+button {
   font-family: var(--font-ocr);
   text-transform: lowercase;
   line-height: 1;
