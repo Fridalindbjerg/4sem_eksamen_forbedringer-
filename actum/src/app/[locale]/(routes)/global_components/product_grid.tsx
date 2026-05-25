@@ -29,19 +29,25 @@ export default async function ProductGrid({
           WebkitOverflowScrolling: "touch",
         }}
       >
-        {/* Looper igennem alle produkter og viser dem som et klikbart kort */}
+        {/* Looper igennem alle produkter og viser dem som et klikbart kort.
+        li er direkte barn af ul – Link er inde i li for at overholde HTML-standarden,
+        da ul kun må have li som direkte børn */}
         {products.map((product) => (
-          <Link href={`/products/${product.id}`} key={product.id}>
-            <li
-              // shrink-0 sikrer at produkterne ikke krymper når der er mange i rækken
-              className="flex flex-col gap-4 shrink-0 w-70"
-              style={{ scrollSnapAlign: "start" }}
+          <li
+            key={product.id}
+            // shrink-0 sikrer at produkterne ikke krymper når der er mange i rækken
+            className="flex flex-col gap-4 shrink-0 w-70"
+            style={{ scrollSnapAlign: "start" }}
+          >
+            <Link
+              href={`/products/${product.id}`}
+              className="flex flex-col gap-4"
             >
               <div>[ {product.sort_by} ]</div>
               <p>{product.name[locale]}</p>
               <ProductImage product={product} locale={locale} />
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </section>

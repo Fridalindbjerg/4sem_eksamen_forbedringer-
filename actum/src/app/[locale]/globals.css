@@ -4,6 +4,8 @@
   --background: #ffffff;
   --almost-black: #191919;
   --grey: #a5a5a5;
+  --grey-accessible: #767676; /* mørkeste grå der består 4.5:1 på hvid */
+
   --light-grey: #e7e7e7;
   --foreground: var(--almost-black);
 

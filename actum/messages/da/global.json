@@ -7,7 +7,9 @@
     "about": "om os",
     "contact": "kontakt",
     "menu": "menu",
-    "close": "luk"
+    "close": "luk",
+    "nav_primary": "Primær navigation",
+    "nav_secondary": "Sekundær navigation"
   },
 
   "footer": {

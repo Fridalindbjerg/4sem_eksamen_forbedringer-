@@ -32,6 +32,7 @@ export default function MobileMenu({ links, locale }: Props) {
         {open && (
           // Menuen glider ind fra højre og fylder hele skærmen
           <motion.nav
+            aria-label="Mobilmenu"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
