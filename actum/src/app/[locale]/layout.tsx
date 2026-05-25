@@ -45,8 +45,13 @@ export default async function LocaleLayout({
   return (
     // lang={locale} fortæller browseren og skærmlæsere hvilket sprog siden er på
     <html lang={locale}>
+      {/* <head> */}
+      {/* Indlæser OCR-fonten fra Adobe Typekit */}
+      {/* <link rel="stylesheet" href="https://use.typekit.net/hga1vzf.css" /> */}
+      {/* </head> */}
       <head>
         {/* Indlæser OCR-fonten fra Adobe Typekit */}
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="" />
         <link rel="stylesheet" href="https://use.typekit.net/hga1vzf.css" />
       </head>
       <body className={`${publicSans.variable} antialiased`}>
