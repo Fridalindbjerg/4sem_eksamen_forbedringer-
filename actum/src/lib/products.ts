@@ -2,7 +2,8 @@ import { supabase } from "@/lib/supabaseClient";
 import { Product } from "@/lib/types";
 
 // bruges i produktgrid på index
-export async function getPopularProducts(): Promise<Product[]> { // Returnerer en promise der løser til en array af Product-objekter
+export async function getPopularProducts(): Promise<Product[]> {
+  // Returnerer en promise der løser til en array af Product-objekter
   const { data, error } = await supabase
     .from("products") // Vælger data fra "products" tabellen
     .select("id, name, description, pics, editorial_text, sort_by, category") // Vælger specifikke kolonner for at optimere forespørgslen
@@ -42,6 +43,16 @@ export async function getProductById(id: string): Promise<Product | null> {
 }
 
 // bruges i products/page.tsx
+// export async function getAllProducts(): Promise<Product[]> {
+//   const { data, error } = await supabase
+//     .from("products")
+//     .select("id, name, description, pics, editorial_text, sort_by, category")
+//     .order("sort_by");
+
+//   if (error) throw error;
+//   return (data as Product[]) ?? [];
+// }
+
 export async function getAllProducts(): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
@@ -49,5 +60,12 @@ export async function getAllProducts(): Promise<Product[]> {
     .order("sort_by");
 
   if (error) throw error;
-  return (data as Product[]) ?? [];
+
+  return (data ?? []).map((product) => ({
+    ...product,
+    pics:
+      typeof product.pics === "string"
+        ? JSON.parse(product.pics)
+        : product.pics,
+  })) as Product[];
 }

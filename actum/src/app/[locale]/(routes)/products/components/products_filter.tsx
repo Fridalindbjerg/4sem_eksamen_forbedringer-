@@ -15,13 +15,13 @@ export default function ProductFilter({ products, locale }: Props) {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   // Henter alle unikke kategorier fra produkterne på det aktuelle sprog.
-  // filter fjerner produkter uden kategori, map henter kategorinavnet og Set fjerner dubletter.
-  // Array.from konverterer Set tilbage til et array så vi kan loope over det.
+  // filter fjerner produkter uden kategori, ! fortæller TypeScript at category ikke er null her,
+  // og Set fjerner dubletter. Array.from konverterer Set tilbage til et array så vi kan loope over det.
   const categories = Array.from(
     new Set(
       products
         .filter((product) => product.category !== null)
-        .map((product) => product.category[locale]),
+        .map((product) => product.category![locale]),
     ),
   );
 
