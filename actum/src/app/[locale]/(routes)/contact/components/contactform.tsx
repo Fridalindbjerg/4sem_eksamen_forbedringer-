@@ -23,7 +23,7 @@ type Props = {
   errorLabel: string;
 };
 
-// Modtager alle oversættelser som props, da t() ikke virker i klientkomponenter. 
+// Modtager alle oversættelser som props, da t() ikke virker i klientkomponenter.
 export default function ContactForm({
   submitLabel,
   emailLabel,
@@ -90,7 +90,9 @@ export default function ContactForm({
           {...register("email")}
         />
         {errors.email && (
-          <span className="text-xs text-(--grey)">{errors.email.message}</span>
+          <span className="text-xs text-(--grey-accessible)">
+            {errors.email.message}
+          </span>
         )}
       </div>
 
@@ -103,7 +105,9 @@ export default function ContactForm({
             {...register("name")}
           />
           {errors.name && (
-            <span className="text-(--grey)">{errors.name.message}</span>
+            <span className="text-(--grey-accessible)">
+              {errors.name.message}
+            </span>
           )}
         </div>
         <div className="flex-1">
@@ -114,7 +118,9 @@ export default function ContactForm({
             {...register("phone")}
           />
           {errors.phone && (
-            <span className="text-(--grey)">{errors.phone.message}</span>
+            <span className="text-(--grey-accessible)">
+              {errors.phone.message}
+            </span>
           )}
         </div>
       </div>

@@ -21,21 +21,3 @@ export default async function ProductsPage() {
     </section>
   );
 }
-
-// <ul className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8">
-//   {/* Looper igennem alle produkter og viser dem som klikbare kort.
-//   Hvert kort linker til produktets egen side via dets id – fx /products/123 */}
-//   {products.map((product) => (
-//     <Link
-//       href={`/products/${product.id}`}
-//       key={product.id}
-//       locale={locale}
-//     >
-//       <li className="flex flex-col gap-4">
-//         <div>[ {product.sort_by} ]</div>
-//         <p>{product.name[locale]}</p>
-//         <ProductImage product={product} locale={locale} />
-//       </li>
-//     </Link>
-//   ))}
-// </ul>
