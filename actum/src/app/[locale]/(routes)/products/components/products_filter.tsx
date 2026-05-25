@@ -65,22 +65,39 @@ export default function ProductFilter({ products, locale }: Props) {
         {/* Looper igennem de filtrerede produkter og viser dem som klikbare kort.
         li er direkte barn af ul – Link er inde i li for at overholde HTML-standarden,
         da ul kun må have li som direkte børn */}
-        {filtered.map((product) => (
-          <li key={product.id} className="flex flex-col gap-4">
-            <Link
-              href={`/products/${product.id}`}
-              locale={locale}
-              className="flex flex-col gap-4"
-            >
+        {filtered.map((product) => {
+          // Tjekker om produktet har et gyldigt billede – editorial-produkter har det ikke
+          const hasImage = product.pics?.[0] && product.pics[0] !== "null";
+
+          // Selve kortets indhold er det samme uanset om det er klikbart eller ej
+          const content = (
+            <div className="flex flex-col gap-4">
               {/* Viser produktets sorteringskategori i kantede parenteser – fx [ Risografi ] */}
               <div>[ {product.sort_by} ]</div>
               {/* Viser produktets navn på det aktuelle sprog */}
               <p>{product.name[locale]}</p>
-              {/* Viser produktbilledet – skifter til andet billede ved hover hvis det findes */}
+              {/* Viser produktbilledet – eller editorial_text hvis produktet er en spacer */}
               <ProductImage product={product} locale={locale} />
-            </Link>
-          </li>
-        ))}
+            </div>
+          );
+
+          return (
+            <li key={product.id} className="flex flex-col gap-4">
+              {/* Produkter med billede får et klikbart link – editorial-spacers får en div */}
+              {hasImage ? (
+                <Link
+                  href={`/products/${product.id}`}
+                  locale={locale}
+                  className="flex flex-col gap-4"
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div className="flex flex-col gap-4">{content}</div>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
