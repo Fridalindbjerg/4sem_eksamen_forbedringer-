@@ -50,7 +50,7 @@ export default function CaseItem({ caseItem }: Props) {
             alt={caseItem.title[locale]}
             width={800}
             height={900}
-            className="w-full h-auto max-h-[80vh] object-cover"
+            className="w-full h-auto  object-cover"
           />
         )}
       </motion.div>
