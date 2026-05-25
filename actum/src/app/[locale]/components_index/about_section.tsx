@@ -13,7 +13,7 @@ export default async function AboutSection() {
         <div className="flex items-center justify-center">
           <div className="relative w-1/3 aspect-3/4">
             <Image
-              src="/assets/index/about_dummy.jpg"
+              src="/assets/index/actum_facade3.webp"
               alt=""
               fill
               sizes="33vw" // optimeret til at være 1/3 af viewport bredden
