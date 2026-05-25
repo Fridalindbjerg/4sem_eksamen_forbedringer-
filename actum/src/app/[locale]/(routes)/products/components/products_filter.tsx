@@ -42,7 +42,7 @@ export default function ProductFilter({ products, locale }: Props) {
         Den aktive knap vises i fuld farve – inaktive knapper vises i grå */}
         <button
           onClick={() => setActiveCategory(null)}
-          className={`font-sans filter-button  pb-2 ${activeCategory === null ? "" : "text-(--grey)"}`}
+          className={`font-sans filter-button  pb-2 ${activeCategory === null ? "" : "text-(--grey-accessible)"}`}
         >
           alle produkter
         </button>
@@ -52,7 +52,7 @@ export default function ProductFilter({ products, locale }: Props) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey)"}`}
+            className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}
           >
             {cat}
           </button>
@@ -63,22 +63,23 @@ export default function ProductFilter({ products, locale }: Props) {
       Antallet af kolonner tilpasser sig automatisk skærmstørrelsen baseret på minimum kolonnebredde */}
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 pt-8">
         {/* Looper igennem de filtrerede produkter og viser dem som klikbare kort.
-        Hvert kort linker til produktets egen side via dets id */}
+        li er direkte barn af ul – Link er inde i li for at overholde HTML-standarden,
+        da ul kun må have li som direkte børn */}
         {filtered.map((product) => (
-          <Link
-            href={`/products/${product.id}`}
-            key={product.id}
-            locale={locale}
-          >
-            <li className="flex flex-col gap-4">
+          <li key={product.id} className="flex flex-col gap-4">
+            <Link
+              href={`/products/${product.id}`}
+              locale={locale}
+              className="flex flex-col gap-4"
+            >
               {/* Viser produktets sorteringskategori i kantede parenteser – fx [ Risografi ] */}
               <div>[ {product.sort_by} ]</div>
               {/* Viser produktets navn på det aktuelle sprog */}
               <p>{product.name[locale]}</p>
               {/* Viser produktbilledet – skifter til andet billede ved hover hvis det findes */}
               <ProductImage product={product} locale={locale} />
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
