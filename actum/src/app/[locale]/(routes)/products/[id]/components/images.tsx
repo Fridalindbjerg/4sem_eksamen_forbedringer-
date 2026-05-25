@@ -18,6 +18,7 @@ export default function ImageGallery({ pics }: Props) {
           // Viser det aktive billede i stor størrelse
           src={activeImage}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
           alt="Aktivt billede"
         />

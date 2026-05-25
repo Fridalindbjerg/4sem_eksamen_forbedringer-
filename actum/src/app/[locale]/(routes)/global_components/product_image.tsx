@@ -42,6 +42,7 @@ export default function ProductImage({
         src={imageSrc}
         alt={product.name[locale]}
         fill
+        sizes="280px" // sizes="280px" fordi produktkortet altid er w-70 (280px) – pixel er mere præcist end vw her
         className="object-cover"
       />
     </div>

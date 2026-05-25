@@ -20,7 +20,12 @@ export default function HeroGallery({ images }: Props) {
           transition={{ duration: 1, ease: "easeInOut", delay: index * 0.15 }} // stagger animation med delay baseret på index
           className={`relative aspect-3/4 overflow-hidden ${index >= 2 ? "hidden md:block" : ""}`}// de sidste 2 billeder skjules på mobil
         >
-          <Image src={url} alt="" fill className="object-cover" />
+          <Image src={url}
+            alt=""
+            fill
+            sizes="(max-width: 768px) 50vw, 25vw"
+            priority
+            className="object-cover" />
         </motion.div>
       ))}
     </div>

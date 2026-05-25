@@ -16,6 +16,7 @@ export default async function AboutSection() {
               src="/assets/index/about_dummy.jpg"
               alt=""
               fill
+              sizes="33vw" // optimeret til at være 1/3 af viewport bredden
               className="object-cover"
             />
           </div>
