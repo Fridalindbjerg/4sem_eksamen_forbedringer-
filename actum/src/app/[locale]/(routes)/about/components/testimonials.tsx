@@ -14,6 +14,7 @@ export default async function AboutSection() {
               src="/assets/index/about_dummy.jpg"
               alt=""
               fill
+              sizes="(max-width: 768px) 33vw, 17vw" // w-1/3 af en md:grid-cols-2 kolonne
               className="object-cover"
             />
           </div>

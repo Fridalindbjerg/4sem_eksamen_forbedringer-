@@ -12,5 +12,6 @@ export async function getIndexImages(): Promise<string[]> { // promise der løse
   // Filtrerer eventuelle placeholder-filer ud og returnerer en array af offentlige URL'er for de resterende billeder
   return data
     .filter((file) => file.name !== ".emptyFolderPlaceholder")
+    .sort((a, b) => a.name.localeCompare(b.name)) // alfabetisk sortering så rækkefølgen er konsistent
     .map((file) => supabase.storage.from("index").getPublicUrl(file.name).data.publicUrl);
 }

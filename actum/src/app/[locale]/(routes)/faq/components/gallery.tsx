@@ -127,7 +127,11 @@ export default function FaqGallery({ images }: Props) {
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   className="absolute inset-0"
                 >
-                  <Image src={url} alt="" fill className="object-cover" />
+                  <Image src={url}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover" />
                 </motion.div>
               </AnimatePresence>
             </div>
