@@ -7,7 +7,7 @@ export default async function AboutSection() {
   const t = await getTranslations("about_section");
 
   return (
-    <section className="section pt-36 content ">
+    <section className="section pt-12 md:pt-36 content ">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Venstre kolonne — billede */}
         <div className="flex items-center justify-center">

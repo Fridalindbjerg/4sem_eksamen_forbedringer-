@@ -11,7 +11,9 @@ export default function ImageGallery({ pics }: Props) {
   const [activeImage, setActiveImage] = useState(pics[0]);
 
   return (
-    <div className="flex gap-2 flex-row">
+    // På mobil: kolonne-layout så thumbnails vises under hovedbilledet
+    // På desktop (lg): række-layout så thumbnails vises til højre for hovedbilledet
+    <div className="flex flex-col gap-2 lg:flex-row">
       {/* Det store aktive billede */}
       <figure className="relative flex-1 max-h-[80vh] aspect-3/4 overflow-hidden">
         <Image
@@ -25,7 +27,8 @@ export default function ImageGallery({ pics }: Props) {
       </figure>
 
       {/* Liste af thumbnails – klikker man på et, skifter det store billede */}
-      <div className="flex flex-col gap-2">
+      {/* På mobil: vandret række under hovedbilledet – på desktop: lodret kolonne til højre */}
+      <div className="flex flex-row gap-2 lg:flex-col">
         {pics.map((img) => (
           <button
             key={img}

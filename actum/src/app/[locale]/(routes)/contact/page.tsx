@@ -8,7 +8,7 @@ export default async function ContactPage() {
 
   return (
     <main className="full-bleed grid grid-cols-subgrid ">
-      <section className="section gap-20 content grid grid-cols-1 md:grid-cols-2 md:pt-4">
+      <section className="section gap-10 md:gap-20 content grid grid-cols-1 md:grid-cols-2 md:pt-4">
         {/* Billede i venstre kolonne */}
         <div className="relative h-40 md:h-full">
           <Image
@@ -23,7 +23,7 @@ export default async function ContactPage() {
         {/* Formular i højre kolonne */}
         <div className="pt-0">
           <h1>{t("title")}</h1>
-          <p className="indent-25 md:py-8">{t("description")}</p>
+          <p className="indent-25 py-8">{t("description")}</p>
           {/* ContactForm er en klientkomponent og kan ikke bruge t() selv.
               Oversættelser sendes derfor som props fra denne serverkomponent.
               Zod-valideringsfejlmeddelelser sendes også som props, så de kan oversættes.*/}

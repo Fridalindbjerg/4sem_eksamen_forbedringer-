@@ -6,7 +6,7 @@ export default async function AboutSection() {
   const t = await getTranslations("testimonials");
 
   return (
-    <section className="section pt-36 content ">
+    <section className="section pt-12 md:pt-36 content ">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="flex items-center justify-center">
           <div className="relative w-1/3 aspect-3/4">
@@ -15,7 +15,7 @@ export default async function AboutSection() {
               alt=""
               fill
               sizes="(max-width: 768px) 33vw, 17vw" // w-1/3 af en md:grid-cols-2 kolonne
-              className="object-cover"
+              className="object-cover pb-12"
             />
           </div>
         </div>
