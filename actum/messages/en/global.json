@@ -7,7 +7,9 @@
     "about": "about",
     "contact": "contact",
     "menu": "menu",
-    "close": "close"
+    "close": "close",
+    "nav_primary": "Primary navigation",
+    "nav_secondary": "Secondary navigation"
   },
   "footer": {
     "contact": "Contact",

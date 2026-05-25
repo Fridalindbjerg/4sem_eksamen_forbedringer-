@@ -19,7 +19,10 @@ export default async function Header() {
         actum
       </Link>
 
-      <nav className="col-[4/5] hidden lg:flex flex-col items-end font-bold text-base leading-7 tracking-wide">
+      <nav
+        aria-label={t("nav_primary")}
+        className="col-[4/5] hidden lg:flex flex-col items-end font-bold text-base leading-7 tracking-wide"
+      >
         <ul className="flex flex-col items-end">
           <NavLink href="/" label={t("home")} locale={locale} />
           <NavLink href="/products" label={t("products")} locale={locale} />
@@ -27,7 +30,10 @@ export default async function Header() {
         </ul>
       </nav>
 
-      <nav className="col-[5/6] hidden lg:flex flex-col items-end font-bold text-base leading-7 tracking-wide">
+      <nav
+        aria-label={t("nav_secondary")}
+        className="col-[5/6] hidden lg:flex flex-col items-end font-bold text-base leading-7 tracking-wide"
+      >
         <ul className="flex flex-col items-end">
           <NavLink href="/faq" label={t("faq")} locale={locale} />
           <NavLink href="/about" label={t("about")} locale={locale} />
