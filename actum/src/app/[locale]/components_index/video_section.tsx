@@ -13,7 +13,7 @@ export default function VideoSection() {
         className="col-[full-start/full-end] row-[1/3] w-full h-full object-cover"
       />
 
-      <div className="col-[full-start/3] row-[1/3] self-end justify-self-start translate-y-1/2 -translate-x-36 relative w-[32vw] max-w-130 aspect-[520/720]">
+      <div className="col-[full-start/3] row-[1/3] self-end justify-self-start translate-y-1/2 -translate-x-36 relative w-[32vw] max-w-130 aspect-[0.722]">  {/* aspect-[0.722] svarer til aspect-[520/720] */}
         <Image
           src="/assets/global/dots_big_group_white.svg"
           alt=""
