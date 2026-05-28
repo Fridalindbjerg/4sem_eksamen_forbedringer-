@@ -20,6 +20,7 @@ export default function VideoSection() {
           width={520}
           height={720}
           className="w-[32vw] max-w-130"
+          style={{ height: "auto" }}
         />
       </div>
     </section>
