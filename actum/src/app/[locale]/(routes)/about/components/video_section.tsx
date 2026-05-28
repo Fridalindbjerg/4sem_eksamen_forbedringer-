@@ -15,7 +15,7 @@ export default function VideoSection() {
       <div className="col-[full-start/2] row-[1/3] self-end justify-self-start translate-y-1/2 -translate-x-36">
         {" "}
         <Image
-          src="/assets/global/dots_big_group_white.svg"
+          src="/assets/about/dots_big_group_white.svg"
           alt=""
           fill
           className="object-contain"
