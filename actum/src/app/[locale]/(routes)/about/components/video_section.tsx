@@ -15,12 +15,10 @@ export default function VideoSection() {
       <div className="col-[full-start/2] row-[1/3] self-end justify-self-start translate-y-1/2 -translate-x-36">
         {" "}
         <Image
-          src="/assets/about/dots_big_group_white.svg"
+          src="/assets/global/dots_big_group_white.svg"
           alt=""
-          width={520}
-          height={720}
-          className="w-[32vw] max-w-130"
-          style={{ height: "auto" }}
+          fill
+          className="object-contain"
           priority
         />
       </div>

@@ -17,9 +17,8 @@ export default function VideoSection() {
         <Image
           src="/assets/global/dots_big_group_white.svg"
           alt=""
-          width={520}
-          height={720}
-          className="w-[32vw] max-w-130 h-auto"
+          fill
+          className="object-contain"
           priority
         />
       </div>
