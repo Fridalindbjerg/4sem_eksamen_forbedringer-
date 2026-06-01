@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import ContactForm from "./components/contactform";
+import CalEmbed from "./components/calembed";
 
 export default async function ContactPage() {
   // Henter oversættelser fra kontakt-nøglen i da.json / en.json
@@ -40,6 +41,19 @@ export default async function ContactPage() {
             sentLabel={t("sent")}
             errorLabel={t("error")}
           />
+        </div>
+      </section>
+
+      {/* Cal.com booking */}
+      <section className="section gap-10 md:gap-20 content grid grid-cols-1 md:grid-cols-2">
+        {/* Tekst i venstre kolonne */}
+        <div>
+          <h2>{t("booking.title")}</h2>
+          <p className="indent-25 py-8">{t("booking.description")}</p>
+        </div>
+        {/* Kalender i højre kolonne */}
+        <div className="flex justify-center">
+          <CalEmbed />
         </div>
       </section>
     </main>

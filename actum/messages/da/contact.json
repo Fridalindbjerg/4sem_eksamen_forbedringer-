@@ -16,6 +16,10 @@
     "sending": "sender...",
     "sent": "besked sendt",
     "error": "noget gik galt",
-    "description": "Fortæl os om dit projekt. Vi finder den bedste løsning til dig, uanset om det er stort, småt eller noget midt imellem. Du er også altid velkommen til at komme forbi butikken og vise os, hvad du arbejder på. Vi svarer inden for 24 timer."
+    "description": "Fortæl os om dit projekt. Vi finder den bedste løsning til dig, uanset om det er stort, småt eller noget midt imellem. Du er også altid velkommen til at komme forbi butikken og vise os, hvad du arbejder på. Vi svarer inden for 24 timer.",
+    "booking": {
+      "title": "Book en konsultation",
+      "description": "Vi tilbyder altid 30 minutters gratis konsultation, hvor vi sammen finder den bedste løsning til dit projekt."
+    }
   }
 }
