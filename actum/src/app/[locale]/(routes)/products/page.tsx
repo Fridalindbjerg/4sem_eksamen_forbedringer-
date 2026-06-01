@@ -1,15 +1,11 @@
 import { Suspense } from "react";
 import ProductsContent from "./components/products_content";
-import { getTranslations } from "next-intl/server";
-import { getLocale } from "next-intl/server";
+import ProductsContentSkeleton from "../global_components/skeleton";
 
 export default async function ProductsPage() {
-  const t = await getTranslations("products");
-  const locale = (await getLocale()) as "da" | "en";
-
   return (
     <main className="full-bleed grid grid-cols-subgrid">
-      <Suspense fallback={<p>Loading products...</p>}>
+      <Suspense fallback={<ProductsContentSkeleton />}>
         <ProductsContent />
       </Suspense>
     </main>
