@@ -40,6 +40,9 @@ export default function ContactForm({
   // Styrer tekst på send-knappen afhængigt af formularens tilstand
   const [buttonText, setButtonText] = useState(submitLabel);
 
+  // Øverst i komponenten – tilføj til eksisterende props og state
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   // Zod-schema definerer valideringsregler for hvert felt
   // Fejlbeskeder kommer som props fra page.tsx, så de kan oversættes
   const contactSchema = z.object({
@@ -67,14 +70,12 @@ export default function ContactForm({
     setButtonText(sendingLabel);
 
     try {
-      await submitContactForm(data);
-      // Nulstiller formularen og viser succesbesked på knappen
+      // selectedFile sendes som separat argument – ikke en del af zod-schemaet
+      await submitContactForm(data, selectedFile ?? undefined);
       setButtonText(sentLabel);
       reset();
-      // Gendanner knappens tekst til originalen efter 3 sekunder
-      setTimeout(() => {
-        setButtonText(submitLabel);
-      }, 3000);
+      setSelectedFile(null);
+      setTimeout(() => setButtonText(submitLabel), 3000);
     } catch {
       setButtonText(errorLabel);
     }
@@ -130,6 +131,15 @@ export default function ContactForm({
           placeholder={messagePlaceholder}
           className="cursor-pointer w-full border-b border-(--almost-black) bg-transparent outline-none resize-none h-32 pb-2"
           {...register("message")}
+        />
+      </div>
+
+      <div>
+        <input
+          type="file"
+          accept=".pdf,.png,.jpg,.jpeg,.ai,.eps"
+          onChange={(e) => setSelectedFile(e.target.files?.[0] ?? null)}
+          className="w-full border-b border-(--almost-black) bg-transparent outline-none pb-4 cursor-pointer"
         />
       </div>
 
