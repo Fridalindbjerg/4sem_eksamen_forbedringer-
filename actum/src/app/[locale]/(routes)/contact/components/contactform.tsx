@@ -134,18 +134,40 @@ export default function ContactForm({
         />
       </div>
 
-      <div>
+      <label className="relative flex items-center text-(--grey-accessible) w-full border-b cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2" // ← ikke stroke-width
+          strokeLinecap="round" // ← ikke stroke-linecap
+          strokeLinejoin="round" // ← ikke stroke-linejoin
+          className="  pb-1 mr-2 "
+        >
+          <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+          <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+          <path d="M12 12v6" />
+          <path d="m15 15-3-3-3 3" />
+        </svg>
+        <p className="flex-1 cursor-pointer ">
+          {selectedFile
+            ? selectedFile.name
+            : " Klik for at vedhæfte en fil (valgfrit)"}
+        </p>
         <input
           type="file"
           accept=".pdf,.png,.jpg,.jpeg,.ai,.eps"
           onChange={(e) => setSelectedFile(e.target.files?.[0] ?? null)}
-          className="w-full border-b border-(--almost-black) bg-transparent outline-none pb-4 cursor-pointer"
+          className="absolute inset-0 w-full h-full opacity-0"
         />
-      </div>
+      </label>
 
       <button
         type="submit"
-        className="mt-10 w-1/2 mx-auto inline-block px-16 py-3 text-sm tracking-widest bg-(--almost-black) text-white border border-(--almost-black) hover:bg-white hover:text-(--almost-black) transition-colors duration-200"
+        className="mt-10  w-1/2 mx-auto inline-block px-16 py-3 text-sm tracking-widest bg-(--almost-black) text-white border border-(--almost-black) hover:bg-white hover:text-(--almost-black) transition-colors duration-200"
       >
         {buttonText}
       </button>
