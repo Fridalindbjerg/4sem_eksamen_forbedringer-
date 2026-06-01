@@ -55,16 +55,11 @@ export async function POST(request: Request) {
     }
 
     // Tilføj dette
-    console.log("Upload OK, fileName:", fileName);
 
     const { data: signedUrlData, error: signedUrlError } =
       await supabase.storage
         .from("contact-files")
         .createSignedUrl(fileName, 60 * 60 * 24 * 7);
-
-    // Tilføj dette
-    console.log("signedUrlData:", signedUrlData);
-    console.log("signedUrlError:", signedUrlError);
 
     fileUrl = signedUrlData?.signedUrl ?? null;
   }
