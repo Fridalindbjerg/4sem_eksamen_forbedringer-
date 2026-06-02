@@ -2,6 +2,8 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import CTAButtonDiscrete from "../(routes)/global_components/cta_button_discrete";
 
+
+// src="/assets/index/actum_facade3.webp"
 // Server component — henter oversættelser på serversiden
 export default async function AboutSection() {
   const t = await getTranslations("about_section");
@@ -13,7 +15,7 @@ export default async function AboutSection() {
         <div className="flex items-center justify-center">
           <div className="relative w-1/2 aspect-3/4 pb-8">
             <Image
-              src="/assets/index/actum_facade3.webp"
+              src="/assets/index/about.webp"
               alt=""
               fill
               sizes="50vw" // optimeret til at være 1/3 af viewport bredden
@@ -21,6 +23,7 @@ export default async function AboutSection() {
             />
           </div>
         </div>
+
 
         {/* Højre kolonne — tekst, adresse og CTA */}
         <div className="flex flex-col justify-between gap-y-16">
