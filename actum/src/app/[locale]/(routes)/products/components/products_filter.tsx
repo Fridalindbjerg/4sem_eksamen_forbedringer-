@@ -17,22 +17,11 @@ export default function ProductFilter({ products, locale }: Props) {
   // Henter alle unikke kategorier fra produkterne på det aktuelle sprog.
   // filter fjerner produkter uden kategori, ! fortæller TypeScript at category ikke er null her,
   // og Set fjerner dubletter. Array.from konverterer Set tilbage til et array så vi kan loope over det.
-  const categories = Array.from(
-    new Set(
-      products
-        .filter((product) => product.category !== null)
-        .map((product) => product.category![locale]),
-    ),
-  );
+  const categories = Array.from(new Set(products.filter((product) => product.category !== null).map((product) => product.category![locale])));
 
   // Filtrerer produkterne baseret på den aktive kategori.
   // Hvis ingen kategori er valgt vises alle produkter – ellers kun dem der matcher den valgte kategori.
-  const filtered =
-    activeCategory === null
-      ? products
-      : products.filter(
-          (product) => product.category?.[locale] === activeCategory,
-        );
+  const filtered = activeCategory === null ? products : products.filter((product) => product.category?.[locale] === activeCategory);
 
   return (
     <div>
@@ -40,20 +29,13 @@ export default function ProductFilter({ products, locale }: Props) {
       <nav className="flex flex-col items-start sm:flex-row sm:justify-between sm:items-center w-full md:gap-6">
         {/* Knap der nulstiller filteret og viser alle produkter.
         Den aktive knap vises i fuld farve – inaktive knapper vises i grå */}
-        <button
-          onClick={() => setActiveCategory(null)}
-          className={`font-sans filter-button  pb-2 ${activeCategory === null ? "" : "text-(--grey-accessible)"}`}
-        >
+        <button onClick={() => setActiveCategory(null)} className={`font-sans filter-button  pb-2 ${activeCategory === null ? "" : "text-(--grey-accessible)"}`}>
           alle produkter
         </button>
         {/* Looper igennem alle unikke kategorier og laver en filterknap per kategori.
         Klikker man på en knap sættes activeCategory til den valgte kategori */}
         {categories.map((cat, index) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}
-          >
+          <button key={cat} onClick={() => setActiveCategory(cat)} className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}>
             {cat}
           </button>
         ))}
@@ -72,8 +54,8 @@ export default function ProductFilter({ products, locale }: Props) {
           // Selve kortets indhold er det samme uanset om det er klikbart eller ej
           const content = (
             <div className="flex flex-col gap-4">
-              {/* Viser produktets sorteringskategori i kantede parenteser – fx [ Risografi ] */}
-              <div>[ {product.sort_by} ]</div>
+              
+              {/* <div>[ {product.sort_by} ]</div> */}
               {/* Viser produktets navn på det aktuelle sprog */}
               <p>{product.name[locale]}</p>
               {/* Viser produktbilledet – eller editorial_text hvis produktet er en spacer */}
@@ -85,11 +67,7 @@ export default function ProductFilter({ products, locale }: Props) {
             <li key={product.id} className="flex flex-col gap-4">
               {/* Produkter med billede får et klikbart link – editorial-spacers får en div */}
               {hasImage ? (
-                <Link
-                  href={`/products/${product.id}`}
-                  locale={locale}
-                  className="flex flex-col gap-4"
-                >
+                <Link href={`/products/${product.id}`} locale={locale} className="flex flex-col gap-4">
                   {content}
                 </Link>
               ) : (

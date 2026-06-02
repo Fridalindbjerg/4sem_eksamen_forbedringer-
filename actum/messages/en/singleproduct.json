@@ -1,9 +1,10 @@
 {
   "singleproduct": {
-    "title": "single product",
-    "link": "contact us",
+    "title": "Single product",
+    "link": "Contact us",
     "price": "Indicative price",
-    "breadcrum": "products",
-    "relatedproducts": "related products"
+    "breadcrum": "Products",
+    "relatedproducts": "Related products",
+    "link_btn_discrete": "View all products"
   }
 }

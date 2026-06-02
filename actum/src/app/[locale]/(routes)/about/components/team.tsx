@@ -56,8 +56,8 @@ export default async function TeamSection() {
   const locale = (await getLocale()) as "da" | "en";
 
   return (
-    // Grid der viser 2 kolonner på mobil og fylder automatisk ud fra 270px på større skærme
-    <section className="section content grid grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-8">
+
+   <section className="section content grid grid-cols-2 md:grid-cols-4 gap-8">
       {/* looper igennem alle teammedlemmer og viser deres billede og tekst */}
       {members.map((member) => (
         <article key={member.id} className="flex flex-col">
