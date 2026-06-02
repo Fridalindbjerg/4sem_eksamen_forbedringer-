@@ -21,7 +21,7 @@ export default async function Hero() {
       </HeroText>
 
       <HeroText delay={1.6} className="col-[content-start/content-end] md:col-[content-start/5] row-[5/6] pt-8">
-        <p className="text-base indent-20">{t("text")}</p>
+        <p className="text-base indent-20 max-w-[75ch]">{t("text")}</p>
       </HeroText>
 
       <HeroDots />

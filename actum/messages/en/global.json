@@ -12,7 +12,8 @@
     "nav_secondary": "Secondary navigation"
   },
   "footer": {
-    "contact": "Contact",
+    "Find": "Find us",
+    "about": "About us",
     "name": "Actum Design & Print",
     "vat": "CVR: 44103362",
     "address": "Vesterbrogade 129",
@@ -27,6 +28,7 @@
     "logo": "actum",
     "toTop": "To the top",
     "copyright": "© 2026 Actum Copy & Print.",
-    "contactCTA": "Contact us"
+    "contactCTA": "Contact us",
+    "instagramCTA": "Instagram"
   }
 }

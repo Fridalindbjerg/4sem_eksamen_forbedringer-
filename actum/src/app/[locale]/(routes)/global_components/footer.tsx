@@ -9,41 +9,56 @@ export default function Footer() {
 
   return (
     // Baggrundsbillede er sat som absolute, da Next Image ikke kan bruge fill layout i en parent med overflow-hidden. Det er nødvendigt for at sikre, at billedet ikke stikker udenfor på mindre skærme.
-    <footer className="relative overflow-hidden full-bleed grid grid-cols-subgrid text-(--background) pt-24 pb-12 md:pt-24 md:pb-16 gap-y-20 text-sm">
+    <footer className="relative overflow-hidden full-bleed grid grid-cols-subgrid text-(--background) pt-24 pb-12 md:pt-24 md:pb-16 gap-y-8 text-sm">
       {/* inset-0 sikre, at billedet dækker hele footeren */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <Image
           src="/assets/footer/footer_bg.png"
           alt="Footer background"
           fill
-          className="object-cover"
+          className="object-cover object-top"
           priority
         />
       </div>
-      {/* Kontakt */}
-      <div className="col-[content-start/3] md:col-[content-start/3] md:row-start-1 flex flex-col gap-6">
-        <p className="font-ocr tracking-widest">{t("contact")}</p>
 
+      {/* Find os */}
+      <div className="col-[content-start/3] md:col-[content-start/3] md:row-start-1 flex flex-col gap-6">
+        <p className="font-ocr tracking-widest">{t("find")}</p>
         <div className="leading-7">
           <p>{t("name")}</p>
           <p>{t("vat")}</p>
           <br />
           <p>{t("address")}</p>
           <p>{t("city")}</p>
-          <br />
+        </div>
+        {/* Da/En knap */}
+        <LanguageSwitch />
+      </div>
+
+      {/* Kontakt */}
+      <div className="col-[content-start/3] md:col-[3/4] md:row-start-1 flex flex-col gap-6">
+        <p className="font-ocr tracking-widest">{t("contact")}</p>
+        <div className="leading-7">
           <p>{t("phone")}</p>
           <p>{t("email")}</p>
           <br />
-          <CTAButtonDiscrete
-            href="/contact"
-            label={t("contactCTA")}
-            className="cursor-pointer text-white"
-          />
+          <div className="flex flex-col gap-2">
+            <CTAButtonDiscrete
+              href="/contact"
+              label={t("contactCTA")}
+              className="cursor-pointer text-white"
+            />
+            <CTAButtonDiscrete
+              href="https://www.instagram.com/actumdesignogtryk/"
+              label={t("instagramCTA")}
+              className="cursor-pointer text-white"
+            />
+          </div>
         </div>
       </div>
 
       {/* Åbningstider */}
-      <div className="col-[content-start/3] md:col-[3/4] md:row-start-1 flex flex-col gap-6">
+      <div className="col-[content-start/3] md:col-[4/5] md:row-start-1 flex flex-col gap-6">
         <p className="font-ocr tracking-widest">{t("openingHours")}</p>
 
         {/* Hentet fra databasen - nemmere at vedligeholde for actum */}
@@ -53,8 +68,6 @@ export default function Footer() {
           <p>{t("saturday")}</p>
           <p>{t("sunday")}</p>
         </div>
-        {/* Da/En knap */}
-        <LanguageSwitch />
       </div>
 
       {/* Logo + til toppen */}
@@ -72,8 +85,10 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="col-[content-start/content-end] md:col-[content-start/2]">
-        <p>{t("copyright")}</p>
+      <div className="col-[content-start/content-end] md:col-[content-start/2] md:pt-10">
+        <p className="text-xs">
+          {t("copyright")}
+        </p>
       </div>
     </footer>
   );

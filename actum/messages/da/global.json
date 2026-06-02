@@ -11,8 +11,8 @@
     "nav_primary": "Primær navigation",
     "nav_secondary": "Sekundær navigation"
   },
-
   "footer": {
+    "find": "Find os",
     "contact": "Kontakt",
     "name": "Actum Design & Tryk",
     "vat": "CVR: 44103362",
@@ -28,6 +28,7 @@
     "logo": "actum",
     "toTop": "Til toppen",
     "copyright": "© 2026 Actum Kopi & Tryk.",
-    "contactCTA": "Kontakt os"
+    "contactCTA": "Kontakt os",
+    "instagramCTA": "Instagram"
   }
 }
