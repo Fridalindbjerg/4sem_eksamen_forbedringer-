@@ -1,11 +1,11 @@
 {
   "contact": {
-    "title": "kontakt",
-    "email": "email",
-    "name": "navn",
-    "phone": "telefon",
-    "message": "besked",
-    "submit": "send",
+    "title": "Kontakt",
+    "email": "Email",
+    "name": "Navn",
+    "phone": "Telefon",
+    "message": "Besked",
+    "submit": "Send",
     "messagePlaceholder": "Beskriv dit projekt - hvad skal trykkes, i hvilken mængde, og hvornår skal det være klar? Har du en fil klar, eller har du brug for hjælp til opsætning? Jo mere du fortæller, desto bedre kan vi hjælpe.",
     "errors": {
       "email": "Ugyldig email",
@@ -13,9 +13,9 @@
       "phone": "Telefonnummer skal være mindst 8 tegn",
       "message": "Besked skal være mindst 10 tegn"
     },
-    "sending": "sender...",
-    "sent": "besked sendt",
-    "error": "noget gik galt",
+    "sending": "Sender...",
+    "sent": "Besked sendt",
+    "error": "Noget gik galt",
     "description": "Fortæl os om dit projekt. Vi finder den bedste løsning til dig, uanset om det er stort, småt eller noget midt imellem. Du er også altid velkommen til at komme forbi butikken og vise os, hvad du arbejder på. Vi svarer inden for 24 timer.",
     "booking": {
       "title": "Book en konsultation",

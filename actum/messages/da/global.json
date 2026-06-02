@@ -1,13 +1,13 @@
 {
   "nav": {
-    "home": "forside",
-    "products": "produkter",
-    "cases": "projekter",
-    "faq": "faq",
-    "about": "om os",
-    "contact": "kontakt",
-    "menu": "menu",
-    "close": "luk",
+    "home": "Forside",
+    "products": "Produkter",
+    "cases": "Projekter",
+    "faq": "Faq",
+    "about": "Om os",
+    "contact": "Kontakt",
+    "menu": "Menu",
+    "close": "Luk",
     "nav_primary": "Primær navigation",
     "nav_secondary": "Sekundær navigation"
   },

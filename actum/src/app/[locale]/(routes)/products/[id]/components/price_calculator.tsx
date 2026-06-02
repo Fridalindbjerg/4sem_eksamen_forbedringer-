@@ -116,7 +116,7 @@ export default function PriceCalculator({ materials }: Props) {
         {/* Højre kolonne – viser den samlede pris.
         toFixed(2) sikrer at prisen altid vises med to decimaler */}
         <div className="flex flex-col gap-2 justify-end">
-          <p className="font-ocr lowercase leading-none text-[clamp(1.2rem,1.8vw,1.6rem)]">
+          <p className="font-ocr leading-none text-[clamp(1.2rem,1.8vw,1.6rem)]">
             {totalPrice.toFixed(2)} DKK
           </p>
           <span className="text-gray-600 text-xs font-ocr">{t("price")}</span>

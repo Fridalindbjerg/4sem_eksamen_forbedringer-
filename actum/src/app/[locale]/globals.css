@@ -136,6 +136,5 @@ h2,
 h3,
 h4 {
   font-family: var(--font-ocr);
-  text-transform: lowercase;
   line-height: 1;
 }
