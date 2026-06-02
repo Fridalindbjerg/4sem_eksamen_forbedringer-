@@ -30,13 +30,21 @@ export default function ImageGallery({ pics }: Props) {
       {/* På mobil: vandret række under hovedbilledet – på desktop: lodret kolonne til højre */}
       <div className="flex flex-row gap-2 lg:flex-col">
         {pics.map((img) => (
-          <button
-            key={img}
-            onClick={() => setActiveImage(img)}
-            // gør at det aktive billede vises med fuld opacity – resten er let gennemsigtige
-            className={activeImage === img ? "opacity-100" : "opacity-75"}
-          >
-            <Image src={img} width={150} height={100} alt="Thumbnail" />
+          // <button
+          //   key={img}
+          //   onClick={() => setActiveImage(img)}
+          //   // gør at det aktive billede vises med fuld opacity – resten er let gennemsigtige
+          //   className={activeImage === img ? "opacity-100" : "opacity-75"}
+          // >
+          //   <Image src={img} width={150} height={100} alt="Thumbnail" />
+          // </button>
+
+          //thubnails med samme aspect ratio:
+
+          <button key={img} onClick={() => setActiveImage(img)} className={activeImage === img ? "opacity-100" : "opacity-75"}>
+            <div className="relative w-24 aspect-3/4 overflow-hidden">
+              <Image src={img} fill alt="Thumbnail" className="object-cover" />
+            </div>
           </button>
         ))}
       </div>
