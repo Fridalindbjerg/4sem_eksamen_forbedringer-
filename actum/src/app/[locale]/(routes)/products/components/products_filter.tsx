@@ -21,7 +21,12 @@ export default function ProductFilter({ products, locale }: Props) {
 
   // Filtrerer produkterne baseret på den aktive kategori.
   // Hvis ingen kategori er valgt vises alle produkter – ellers kun dem der matcher den valgte kategori.
-  const filtered = activeCategory === null ? products : products.filter((product) => product.category?.[locale] === activeCategory);
+  const filtered =
+    activeCategory === null
+      ? products
+      : products.filter(
+        (product) => product.category?.[locale] === activeCategory,
+      );
 
   return (
     <div>
@@ -35,7 +40,11 @@ export default function ProductFilter({ products, locale }: Props) {
         {/* Looper igennem alle unikke kategorier og laver en filterknap per kategori.
         Klikker man på en knap sættes activeCategory til den valgte kategori */}
         {categories.map((cat, index) => (
-          <button key={cat} onClick={() => setActiveCategory(cat)} className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}>
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`font-sans filter-button pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}
+          >
             {cat}
           </button>
         ))}

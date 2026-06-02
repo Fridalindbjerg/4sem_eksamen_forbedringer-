@@ -33,7 +33,7 @@ export default function FaqPageSection({ faqs }: Props) {
             >
               {faq.question[locale]}
               {/* Viser + når lukket og − når åben baseret på open state ved at tjekke om faq.id matcher open */}
-              <span>{open === faq.id ? "−" : "+"}</span>
+              <span>{open === faq.id ? "-" : "+"}</span>
             </button>
 
             {/* AnimatePresence gør det muligt at animere elementet når det fjernes fra DOM'en */}
@@ -48,7 +48,7 @@ export default function FaqPageSection({ faqs }: Props) {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="text-base pb-4">{faq.answer[locale]}</p>
+                  <p className="text-base pb-4 max-w-[75ch]">{faq.answer[locale]}</p>
                 </motion.div>
               )}
             </AnimatePresence>

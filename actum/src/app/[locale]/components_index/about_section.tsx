@@ -11,13 +11,13 @@ export default async function AboutSection() {
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Venstre kolonne — billede */}
         <div className="flex items-center justify-center">
-          <div className="relative w-1/3 aspect-3/4">
+          <div className="relative w-1/2 aspect-3/4 pb-8">
             <Image
               src="/assets/index/actum_facade3.webp"
               alt=""
               fill
-              sizes="33vw" // optimeret til at være 1/3 af viewport bredden
-              className="object-cover"
+              sizes="50vw" // optimeret til at være 1/3 af viewport bredden
+              className="object-cover pb-8 md:pb-0"
             />
           </div>
         </div>

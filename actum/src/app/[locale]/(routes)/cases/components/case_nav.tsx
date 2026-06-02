@@ -66,7 +66,7 @@ export default function CasesNav({ cases }: Props) {
                 <span className="grid grid-cols-[auto_1fr] gap-2">
                   <span>{String(caseItem.order).padStart(2, "0")}</span>
                   {/* Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale */}
-                  <p>{caseItem.title[locale]}</p>
+                  <p className="first-letter:uppercase">{caseItem.title[locale]}</p>
                 </span>
               </a>
             </li>

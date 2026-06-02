@@ -1,16 +1,16 @@
 {
   "hero": {
-    "title": "design og tryk",
+    "title": "Design og tryk",
     "text": "Gamle maskiner, nye ejere. Et sted i København hvor vejledningen er gratis og du møder dem der har fingrene i arbejdet. Vi laver print til restauranter, kunstnere og designere, og alle dem imellem. Ikke to ens opgaver, ikke to ens kunder. Hver opgave bliver sat op, tjekket og leveret til tiden. Stedet er rodet på den gode måde. Produktet er godt. Kom forbi og se værkstedet."
   },
   "about_section": {
     "text": "I 2023 valgte Lise og Louise at overtage Actum for at holde liv i håndværket, maskinerne og den viden der fulgte med. Siden har de formet det til noget, der er deres eget. Et sted med karakter, faglig stolthed og plads til alle slags opgaver.",
     "address": "Vesterbrogade 129,",
     "city": "1629 København",
-    "link": "om os"
+    "link": "Om os"
   },
   "faq_section": {
-    "h2": "har du spørgsmål?",
-    "link_faq": "flere FAQs"
+    "h2": "Har du spørgsmål?",
+    "link_faq": "Flere FAQs"
   }
 }

@@ -16,7 +16,7 @@ function MemberText({
   return (
     <div className="flex flex-col gap-2">
       <span className="font-ocr text-(--grey-accessible) pt-4">{name}</span>
-      <p className="font-ocr lowercase leading-none text-[clamp(1.2rem,1.8vw,1.6rem)]">
+      <p className="font-ocr leading-none text-[clamp(1.2rem,1.8vw,1.6rem)]">
         {title}
       </p>
       <p>{description}</p>
