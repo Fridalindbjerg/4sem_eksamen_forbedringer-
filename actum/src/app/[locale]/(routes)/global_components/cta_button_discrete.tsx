@@ -8,7 +8,7 @@ type Props = {
 
 export default function CTAButtonDiscrete({ label, href, className }: Props) {
   return (
-    <Link href={href} className={`cursor-pointer inline-block text-sm tracking-widest text-(--almost-black) hover:text-base transition-all duration-200 ${className ?? ""}`}>
+    <Link href={href} className={`cursor-pointer inline-block text-base tracking-widest text-(--almost-black) hover:text-base transition-all duration-200 ${className ?? ""}`}>
       {label} →
     </Link>
   );
