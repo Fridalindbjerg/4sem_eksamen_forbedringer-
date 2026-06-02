@@ -12,14 +12,7 @@ export default async function ContactPage() {
       <section className="section gap-10 md:gap-20 content grid grid-cols-1 md:grid-cols-2 md:pt-4">
         {/* Billede i venstre kolonne */}
         <div className="relative h-40 md:h-full">
-          <Image
-            src="/assets/contact/contact_image.png"
-            alt="Actum værksted"
-            sizes="full-width"
-            priority
-            fill
-            className="object-cover w-auto h-auto"
-          />
+          <Image src="/assets/contact/contact.webp" alt="Actum værksted" sizes="full-width" priority fill className="object-cover w-auto h-auto" />
         </div>
         {/* Formular i højre kolonne */}
         <div className="pt-0">
