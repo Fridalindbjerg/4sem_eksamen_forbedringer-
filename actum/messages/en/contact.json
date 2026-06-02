@@ -1,11 +1,11 @@
 {
   "contact": {
-    "title": "contact",
-    "email": "email",
-    "name": "name",
-    "phone": "phone",
-    "message": "message",
-    "submit": "submit",
+    "title": "Contact",
+    "email": "Email",
+    "name": "Name",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
     "messagePlaceholder": "Describe your project - what needs to be printed, in what quantity, and when should it be ready? Do you have a file ready, or do you need help with setup? The more you tell us, the better we can help.",
     "errors": {
       "email": "Invalid email",
@@ -13,9 +13,9 @@
       "phone": "Phone number must be at least 8 characters",
       "message": "Message must be at least 10 characters"
     },
-    "sending": "sending...",
-    "sent": "message sent",
-    "error": "something went wrong",
+    "sending": "Sending...",
+    "sent": "Message sent",
+    "error": "Something went wrong",
     "description": "Tell us about your project. We'll find the best solution for you, whatever the size or scope. You're also always welcome to stop by the shop and show us what you're working on. We'll get back to you within 24 hours",
     "booking": {
       "title": "Book a consultation",

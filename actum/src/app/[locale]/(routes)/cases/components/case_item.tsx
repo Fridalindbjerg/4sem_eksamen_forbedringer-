@@ -54,9 +54,9 @@ export default function CaseItem({ caseItem }: Props) {
           />
         )}
       </motion.div>
-      <div className="col-[content-start/content-end] md:col-[4/6]   self-center md:pl-6">
+      <div className="col-[content-start/content-end] md:col-[4/6] self-center md:pl-6">
         {/* Henter den lokaliserede titel fra jsonb-objektet baseret på aktiv locale */}
-        <p className="pt-6 pb-4 ">{caseItem.title[locale]}</p>
+        <p className="first-letter:uppercase pt-6 pb-4 ">{caseItem.title[locale]}</p>
         {/* Henter den lokaliserede beskrivelse fra jsonb-objektet baseret på aktiv locale */}
         <motion.p className="pb-6" style={{ opacity, y }}>
           {caseItem.description[locale]}

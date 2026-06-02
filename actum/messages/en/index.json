@@ -1,16 +1,16 @@
 {
   "hero": {
-    "title": "design and print",
+    "title": "Design and print",
     "text": "You have a job that needs doing. We take it in, set up the files and deliver on time. Whether it's business cards, menus or banners for your next event. You have a job that needs doing. We take it in, set up the files and deliver on time. Whether it's business cards, menus or banners for your next event. You have a job that needs doing. We take it in, set up the files and deliver on time. Whether it's business cards, menus or banners for your next event. You have a job that needs doing. We take it in, set up the files and deliver on time. Whether it's business cards, menus or banners for your next event."
   },
   "about_section": {
     "text": "We work with most formats and materials, and we check your files before printing. If you don't have a finished file, we'll help you with the setup. You always approve the price before we get started.",
     "address": "Vesterbrogade 129,",
     "city": "1629 Copenhagen",
-    "link": "about us"
+    "link": "About us"
   },
   "faq_section": {
-    "h2": "frequently asked questions",
-    "link_faq": "more FAQs"
+    "h2": "Frequently asked questions",
+    "link_faq": "More FAQs"
   }
 }

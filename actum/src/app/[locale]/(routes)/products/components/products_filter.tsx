@@ -31,8 +31,8 @@ export default function ProductFilter({ products, locale }: Props) {
     activeCategory === null
       ? products
       : products.filter(
-          (product) => product.category?.[locale] === activeCategory,
-        );
+        (product) => product.category?.[locale] === activeCategory,
+      );
 
   return (
     <div>
@@ -52,7 +52,7 @@ export default function ProductFilter({ products, locale }: Props) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`font-sans filter-button  lowercase pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}
+            className={`font-sans filter-button pb-2 ${activeCategory === cat ? "" : "text-(--grey-accessible)"}`}
           >
             {cat}
           </button>

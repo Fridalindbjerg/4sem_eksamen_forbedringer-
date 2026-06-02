@@ -27,6 +27,7 @@ export default async function ProductGrid({
         style={{
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",
+          marginRight: "calc(-1 * var(--page-margin))",
         }}
       >
         {/* Looper igennem alle produkter og viser dem som et klikbart kort.
