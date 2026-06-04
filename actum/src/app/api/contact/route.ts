@@ -1,13 +1,6 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabaseClient";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-// Opretter forbindelse til Supabase med URL og anonym nøgle fra miljøvariablerne.
-// ! fortæller TypeScript at disse værdier altid er til stede – aldrig undefined.
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
 
 // POST er en Next.js route handler – den kører når kontaktformularen sendes.
 // Den modtager en request med brugerens data og håndterer tre ting:
@@ -54,12 +47,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: uploadError.message }, { status: 500 });
     }
 
-    // Tilføj dette
-
-    const { data: signedUrlData, error: signedUrlError } =
-      await supabase.storage
-        .from("contact-files")
-        .createSignedUrl(fileName, 60 * 60 * 24 * 7);
+    const { data: signedUrlData } = await supabase.storage
+      .from("contact-files")
+      .createSignedUrl(fileName, 60 * 60 * 24 * 7);
 
     fileUrl = signedUrlData?.signedUrl ?? null;
   }
